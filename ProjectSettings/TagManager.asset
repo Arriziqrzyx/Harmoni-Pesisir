@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Seaweed
   - Trash
+  - OrganicBin
+  - InorganicBin
   layers:
   - Default
   - TransparentFX
