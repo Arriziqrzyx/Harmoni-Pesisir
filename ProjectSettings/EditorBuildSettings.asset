@@ -15,15 +15,42 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/GamePlay.unity
+    path: Assets/Scenes/GamePlay/M1Lapangan/GamePlay.unity
     guid: af77ada1de6a26c4ab909c0ffcdbdb9c
   - enabled: 1
-    path: Assets/Scenes/GamePlayintro.unity
+    path: Assets/Scenes/GamePlay/M1Lapangan/GamePlayintro.unity
     guid: a419dc91ff24eef49b96c3adef02057a
   - enabled: 1
-    path: Assets/Scenes/Kuis.unity
+    path: Assets/Scenes/Kuis/Kuis.unity
     guid: 923a5f5e27dbc1141a37be3c0ff1c96c
   - enabled: 1
-    path: Assets/Scenes/AfterGameplay.unity
+    path: Assets/Scenes/GamePlay/M1Lapangan/AfterGameplay.unity
     guid: f2432516650716045ab1093c1670ce59
+  - enabled: 1
+    path: Assets/Scenes/GamePlay/M1Lapangan/PilahSampah.unity
+    guid: 17b52b84d2a926948a5b521e1c9b996b
+  - enabled: 1
+    path: Assets/Scenes/GamePlay/M1Lapangan/Pilihsampahintro.unity
+    guid: de76fc577628bd544be8f5f07978c65f
+  - enabled: 1
+    path: Assets/Scenes/Kuis/KuisIntro.unity
+    guid: 77441508f1936064a9c44238f3767847
+  - enabled: 1
+    path: Assets/Scenes/GamePlay/M2Lapangan/LautSehat2.unity
+    guid: 452673c1a6b7fad47af1b4c68c71c704
+  - enabled: 1
+    path: Assets/Scenes/Kuis/Kuis1.unity
+    guid: d31915192ed032d4f9047e8b079e18c0
+  - enabled: 1
+    path: Assets/Scenes/Kuis/Kuis 3.unity
+    guid: 5adeef3920175324eab99b05b0d41940
+  - enabled: 1
+    path: Assets/Scenes/Kuis/Kuis 2.unity
+    guid: bb49ff8435bdd8c439c41bad7a6ee35f
+  - enabled: 1
+    path: Assets/Scenes/GamePlay/M2Lapangan/BeforeKerangka.unity
+    guid: 710d0b72df3792d428e8da109a8c14df
+  - enabled: 1
+    path: Assets/Scenes/GamePlay/M2Lapangan/Kerangka.unity
+    guid: ec36891a246270247a5d7e94427c92db
   m_configObjects: {}

@@ -15,6 +15,9 @@ public class SeaCleanManager : MonoBehaviour
     public GameObject seaweedCheckObject; // Objek check untuk seaweed
     public GameObject trashCheckObject;   // Objek check untuk trash
 
+    public AudioSource ambilSeawed;
+    public AudioSource ambilSampah;
+
     private int seaweedCleanedCount = 0;
     private int trashCleanedCount = 0;
 
@@ -45,6 +48,7 @@ public class SeaCleanManager : MonoBehaviour
     // Metode untuk memperbarui teks informasi seaweed
     public void SeaweedDestroyed()
     {
+        ambilSeawed.Play();
         seaweedCleanedCount++;
         UpdateSeaweedInfoText();
         CheckSeaweedCleaned();
@@ -53,6 +57,7 @@ public class SeaCleanManager : MonoBehaviour
     // Metode untuk memperbarui teks informasi trash
     public void TrashDestroyed()
     {
+        ambilSampah.Play();
         trashCleanedCount++;
         UpdateTrashInfoText();
         CheckTrashCleaned();

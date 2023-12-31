@@ -8,6 +8,17 @@ TagManager:
   - Trash
   - OrganicBin
   - InorganicBin
+  - Keranjang
+  - DropAreaTali
+  - Tali
+  - DropAreaGaris
+  - DropAreaKarang
+  - DropAreaKarang2
+  - DropAreakarang3
+  - DropAreakarang4
+  - DropAreakarang5
+  - DropAreakarang6
+  - DropLautKarang
   layers:
   - Default
   - TransparentFX
@@ -44,4 +55,25 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: New Layer 1
+    uniqueID: 276701373
+    locked: 0
+  - name: New Layer 2
+    uniqueID: 438829993
+    locked: 0
+  - name: New Layer 3
+    uniqueID: 228355247
+    locked: 0
+  - name: New Layer 4
+    uniqueID: 1854414363
+    locked: 0
+  - name: New Layer 5
+    uniqueID: 143913347
+    locked: 0
+  - name: New Layer 6
+    uniqueID: 4106230545
+    locked: 0
+  - name: New Layer 7
+    uniqueID: 1960733079
     locked: 0
