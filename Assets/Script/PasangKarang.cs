@@ -9,6 +9,8 @@ public class PasangKarang : MonoBehaviour
     public SpriteRenderer spriteRendererJenis4; // Tambahkan variabel sprite renderer untuk jenis 4
     public SpriteRenderer spriteRendererJenis5; // Tambahkan variabel sprite renderer untuk jenis 5
     public SpriteRenderer spriteRendererJenis6; // Tambahkan variabel sprite renderer untuk jenis 6
+    public GameObject checkObject; // Tambahkan variabel untuk objek "Check"
+
 
     private bool isDragging = false;
     private Vector2 startPosition;
@@ -41,6 +43,7 @@ public class PasangKarang : MonoBehaviour
             // Periksa apakah objek karang di-drop di atas objek drop area karang di laut
             if (collider.CompareTag("DropLautKarang"))
             {
+                 checkObject.SetActive(true);
                 // Objek di-drop pada area karang di laut yang tepat, hancurkan objek karang
                 Destroy(gameObject);
 
