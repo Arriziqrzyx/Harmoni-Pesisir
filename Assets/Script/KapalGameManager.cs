@@ -3,19 +3,26 @@ using TMPro;
 
 public class KapalGameManager : MonoBehaviour
 {
-    public GameObject kapalBaikPrefab;
-    public GameObject kapalJahatPrefab;
+    public GameObject[] kapalBaikPrefabs;
+    public GameObject[] kapalJahatPrefabs;
     public Transform spawnPointKiri;
     public Transform spawnPointKanan;
     public TMP_Text skorText;
     public TMP_Text timerText;
     public GameObject panelGameOver; // Panel yang akan diaktifkan saat timer habis
 
+    private IkanGameManager ikanGameManager;
     private int skor = 0;
-    private float timer = 150f; // 2 menit 30 detik
+    private float timer = 30f; // 2 menit 30 detik
 
     void Start()
     {
+        ikanGameManager = FindObjectOfType<IkanGameManager>(); // Menggunakan FindObjectOfType karena GameManager adalah satu-satunya objek di scene
+        if (ikanGameManager == null)
+        {
+            Debug.LogError("Tidak ada objek IkanGameManager di scene!");
+        }
+
         // Panggil fungsi SpawnKapal setiap beberapa detik (misalnya, setiap 2 detik)
         InvokeRepeating("SpawnKapal", 0f, 8f);
 
@@ -38,8 +45,8 @@ public class KapalGameManager : MonoBehaviour
         }
         else
         {
-            // Timer habis, aktifkan panel
-            panelGameOver.SetActive(true);
+            // Timer habis, tunggu 1 detik sebelum mengaktifkan panel
+            Invoke("AktifkanPanelGameOver", 1f);
         }
     }
 
@@ -60,18 +67,15 @@ public class KapalGameManager : MonoBehaviour
         GameObject kapalPrefab;
         if (Random.Range(0, 2) == 0)
         {
-            kapalPrefab = kapalBaikPrefab;
+            kapalPrefab = kapalBaikPrefabs[Random.Range(0, kapalBaikPrefabs.Length)];
         }
         else
         {
-            kapalPrefab = kapalJahatPrefab;
+            kapalPrefab = kapalJahatPrefabs[Random.Range(0, kapalJahatPrefabs.Length)];
         }
 
         // Instantiate prefab kapal di spawnPoint
         GameObject kapal = Instantiate(kapalPrefab, spawnPoint.position, Quaternion.identity);
-
-        // Tentukan parent agar kapal dapat diorganisir dengan baik
-        kapal.transform.parent = transform;
     }
 
     public void UpdateSkor(int nilai)
@@ -82,5 +86,22 @@ public class KapalGameManager : MonoBehaviour
         skor = Mathf.Max(skor, 0);
 
         skorText.text = "Skor: " + skor.ToString();
+    }
+
+    void AktifkanPanelGameOver()
+    {
+        ikanGameManager.stopIkan();
+        // Hentikan spawing
+        CancelInvoke("SpawnKapal");
+
+        // Nonaktifkan script GerakKapal pada semua kapal yang ada
+        GerakKapal[] kapalArray = FindObjectsOfType<GerakKapal>();
+        foreach (GerakKapal kapal in kapalArray)
+        {
+            kapal.enabled = false;
+        }
+
+        // Aktifkan panel
+        panelGameOver.SetActive(true);
     }
 }

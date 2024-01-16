@@ -53,4 +53,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GamePlay/M2Lapangan/Kerangka.unity
     guid: ec36891a246270247a5d7e94427c92db
+  - enabled: 1
+    path: Assets/Scenes/GamePlay/M4Lapangan/UkurKarang.unity
+    guid: f78975d224dfdb343859260389d1d0c3
   m_configObjects: {}

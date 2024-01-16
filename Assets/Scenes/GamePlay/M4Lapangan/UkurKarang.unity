@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 97963347}
   - component: {fileID: 97963346}
+  - component: {fileID: 97963348}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -152,8 +153,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6fde130a072668419c817398c4b8559, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  kapalBaikPrefab: {fileID: 159915112732649585, guid: 6d9356a524e19284cafe8f94745a2401, type: 3}
-  kapalJahatPrefab: {fileID: 159915112732649585, guid: d88cf2added45f74aa5c9a64ff16ce3f, type: 3}
+  kapalBaikPrefabs:
+  - {fileID: 159915112732649585, guid: 6d9356a524e19284cafe8f94745a2401, type: 3}
+  kapalJahatPrefabs:
+  - {fileID: 159915112732649585, guid: d88cf2added45f74aa5c9a64ff16ce3f, type: 3}
   spawnPointKiri: {fileID: 453640599}
   spawnPointKanan: {fileID: 169695186}
   skorText: {fileID: 809351499}
@@ -174,6 +177,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &97963348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 97963345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20e029c818a55bd48b91c4dcfd61f934, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ikanPrefabs:
+  - {fileID: 8865515548062500536, guid: 1e1d88edb60774a4896d60f8be01bbf8, type: 3}
+  spawnPointKiri: {fileID: 334212542}
+  spawnPointKanan: {fileID: 1813302689}
 --- !u!1 &169695185
 GameObject:
   m_ObjectHideFlags: 0
@@ -283,6 +302,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 285543591}
   m_CullTransparentMesh: 1
+--- !u!1 &334212541
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 334212542}
+  m_Layer: 0
+  m_Name: SpawnPoint Ikan
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &334212542
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 334212541}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -12.58, y: -0.79, z: -0.034572016}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &351802497
 GameObject:
   m_ObjectHideFlags: 0
@@ -846,7 +896,7 @@ RectTransform:
   - {fileID: 831973930}
   - {fileID: 1680812265}
   m_Father: {fileID: 1221508924}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1013,9 +1063,9 @@ RectTransform:
   m_LocalScale: {x: 0.009302664, y: 0.009302664, z: 0.009302664}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 6165548887338818361}
-  - {fileID: 285543592}
   - {fileID: 887481350}
+  - {fileID: 285543592}
+  - {fileID: 6165548887338818361}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1176,6 +1226,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1680812264}
   m_CullTransparentMesh: 1
+--- !u!1 &1813302688
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1813302689}
+  m_Layer: 0
+  m_Name: SpawnPoint Ikan (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1813302689
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1813302688}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 12.12, y: -0.79, z: -0.034572016}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1895594406
 GameObject:
   m_ObjectHideFlags: 0
@@ -1574,7 +1655,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 768016446}
         m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
         m_MethodName: LoadScene
         m_Mode: 5
@@ -1583,7 +1664,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: LautSehat2
+          m_StringArgument: Menu
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &6165548885849811220
@@ -2035,7 +2116,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6165548887338818360}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2047,7 +2128,7 @@ RectTransform:
   - {fileID: 6165548887513070925}
   - {fileID: 6165548887444622137}
   m_Father: {fileID: 1221508924}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -2148,7 +2229,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 768016446}
         m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
         m_MethodName: LoadScene
         m_Mode: 5
@@ -2157,7 +2238,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Kerangka
+          m_StringArgument: UkurKarang
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &6165548887444622136
