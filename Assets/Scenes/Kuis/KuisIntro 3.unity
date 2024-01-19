@@ -963,7 +963,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1718355587}
-  - component: {fileID: 1718355586}
+  - component: {fileID: 1718355588}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -971,28 +971,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1718355586
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1718355585}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af0ab533a5fb05e4aac67759a48d472e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  conversationText: {fileID: 2564529060870817534}
-  nextButton: {fileID: 2564529059531303671}
-  teacherImage: {fileID: 2564529060568177351}
-  PanelDialog: {fileID: 409307266}
-  teacherSprites:
-  - {fileID: 21300000, guid: f48c9263a23d1194197e727e3c626554, type: 3}
-  - {fileID: 21300000, guid: 538594ac21532ab4da9ee3795dd45ff4, type: 3}
-  - {fileID: 21300000, guid: 8b746d006be99ec418e857aa750a1355, type: 3}
-  - {fileID: 21300000, guid: 741972a42041d71479973cc7e5776175, type: 3}
-  - {fileID: 21300000, guid: f94ec2af6b533784b9a5c7da0a4ca559, type: 3}
 --- !u!4 &1718355587
 Transform:
   m_ObjectHideFlags: 0
@@ -1008,6 +986,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1718355588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1718355585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94944d71aa15998479fde6f8a52498df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conversationText: {fileID: 2564529060870817534}
+  nextButton: {fileID: 2564529059531303671}
+  teacherImage: {fileID: 2564529060568177351}
+  PanelDialog: {fileID: 409307266}
+  teacherSprites:
+  - {fileID: 21300000, guid: f48c9263a23d1194197e727e3c626554, type: 3}
+  - {fileID: 21300000, guid: 8b746d006be99ec418e857aa750a1355, type: 3}
+  - {fileID: 21300000, guid: f94ec2af6b533784b9a5c7da0a4ca559, type: 3}
+  - {fileID: 21300000, guid: da37ddbb97a275b49b645a0355c2bfd3, type: 3}
 --- !u!1 &1981559081
 GameObject:
   m_ObjectHideFlags: 0

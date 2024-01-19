@@ -3636,39 +3636,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   questions:
-  - question: Apa perbedaan antara sampah organik dan sampah anorganik?
+  - question: Apa yang dimaksud dengan sampah organik?
     answers:
-    - Sampah organik dapat terurai secara alami, sedangkan sampah anorganik sulit
-      terurai
-    - ' Sampah organik hanya berasal dari tumbuhan, sedangkan sampah anorganik hanya
-      berasal dari manusia'
-    - Sampah organik bersifat permanen, sedangkan sampah anorganik dapat terurai
-      dengan cepat
+    - Sampah yang berasal dari makhluk hidup dan dapat terurai secara alami
+    - Sampah yang hanya terdiri dari plastik
+    - Sampah yang tidak dapat dimanfaatkan kembali
     correctAnswerIndex: 0
-  - question: Apa salah satu manfaat dari sampah organik yang disebut dalam teks?
+  - question: ' Contoh sampah organik basah adalah...'
     answers:
-    - Digunakan sebagai bahan baku industri
-    - ' Dapat dijadikan kerajinan tangan'
-    - Diubah menjadi biogas untuk energi listrik
-    correctAnswerIndex: 2
-  - question: Apa yang mencakup sampah anorganik?
-    answers:
-    - Daun kering dan ranting pohon
-    - Plastik, kaca, logam, dan barang-barang elektronik
-    - ' Sisa sayur dan kulit pisang'
+    - Botol plastik
+    - Kulit pisang
+    - Kaca
     correctAnswerIndex: 1
-  - question: Apa yang dimaksud dengan prinsip 3R dalam pengelolaan sampah?
+  - question: Apa yang termasuk ke dalam sampah anorganik?
     answers:
-    - Rantai, Reboisasi, Rehabilitasi
+    - Sisa sayur
+    - Plastik
+    - Kayu
+    correctAnswerIndex: 1
+  - question: Prinsip 3R dalam pengelolaan sampah mencakup...
+    answers:
     - Reuse, Reduce, Recycle
-    - Ramah Lingkungan, Rencana, Resolusi
-    correctAnswerIndex: 1
-  - question: Mengapa pengelolaan sampah dengan prinsip 3R dianggap penting untuk
-      lingkungan?
+    - Read, Relax, Run
+    - Recharge, Rest, Reflect
+    correctAnswerIndex: 0
+  - question: Apa dampak negatif dari tidak melakukan pengelolaan sampah dengan baik?
     answers:
-    - Untuk meningkatkan produksi sampah
-    - Agar sampah organik lebih cepat terurai
-    - Untuk mengurangi dampak negatif pada lingkungan
+    - Lingkungan menjadi lebih bersih
+    - Penurunan dampak negatif terhadap lingkungan
+    - Sampah mencemari lingkungan
     correctAnswerIndex: 2
   defaultTime: 50
   questionText: {fileID: 1413369623}

@@ -13,7 +13,7 @@ public class KapalGameManager : MonoBehaviour
 
     private IkanGameManager ikanGameManager;
     private int skor = 0;
-    private float timer = 30f; // 2 menit 30 detik
+    private float timer = 60f; // 2 menit 30 detik
 
     void Start()
     {

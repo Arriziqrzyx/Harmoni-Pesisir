@@ -57,7 +57,7 @@ public class KerangkaManager : MonoBehaviour
     private int dropAreaCountTali = 0;
     private int totalDropAreaCountTali;
 
-    private float timerDuration = 30f;
+    private float timerDuration = 45f;
     private float timer;
     private int currentScore;
 

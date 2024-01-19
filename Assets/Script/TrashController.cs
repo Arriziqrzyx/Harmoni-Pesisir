@@ -6,6 +6,7 @@ public class TrashController : MonoBehaviour
 {
     public float floatSpeed = 1f; // Kecepatan terombang-ambing
     public float floatDistance = 0.5f; // Jarak maksimum terombang-ambing
+    public AudioSource audioSampah;
     private float moveToTrashSpeed = 10f; // Kecepatan bergerak ke kantong sampah
 
     private bool isMovingToTrash = false;
@@ -15,6 +16,7 @@ public class TrashController : MonoBehaviour
         if (!isMovingToTrash)
         {
             MoveToTrashAndDestroy();
+            audioSampah.Play();
         }
     }
 

@@ -3636,38 +3636,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   questions:
-  - question: Apa yang membedakan ikan dari hewan bertulang belakang lainnya?
+  - question: Apa yang membedakan ikan karang dari ikan lainnya?
     answers:
-    - Mereka hidup di air dan memiliki darah dingin
-    - Mereka bernafas menggunakan insang
-    - Mereka dapat hidup di air tawar dan air asin
+    - Ukuran yang besar
+    - Berkembang biak di terumbu karang
+    - Tidak memiliki warna mencolok
     correctAnswerIndex: 1
-  - question: Apa yang membedakan ikan karang dari jenis ikan lainnya?
+  - question: Berdasarkan siklus hidupnya, ikan di perairan terumbu karang dibagi
+      menjadi berapa kelompok?
     answers:
-    - ' Ukurannya yang besar'
-    - Cenderung tidak berpindah-pindah
-    - Hanya hidup di perairan air tawar
+    - Satu kelompok
+    - Dua kelompok
+    - Tiga kelompok
     correctAnswerIndex: 1
-  - question: Apa perbedaan antara kelompok ikan yang bersifat menetap dan kelompok
-      ikan yang bersifat sementara dalam perairan terumbu karang?
+  - question: Apa fungsi ikan target dalam kelompok ikan karang?
     answers:
-    - ' Hanya kelompok yang bersifat menetap yang memijah di terumbu karang'
-    - Kelompok yang bersifat menetap seluruh siklus hidupnya terjadi di terumbu karang
-    - Kelompok yang bersifat sementara hanya datang ke terumbu karang untuk mencari
-      makan
-    correctAnswerIndex: 1
-  - question: Apa fungsi ikan yang termasuk dalam kelompok "Ikan Indikator"?
+    - Menjadi indikator kesehatan terumbu karang
+    - ' Menjadi ikan hias air laut'
+    - Menjadi target penangkapan dan konsumsi
+    correctAnswerIndex: 2
+  - question: Apa peran ikan indikator dalam kelompok ikan karang?
     answers:
-    - Menjadi target penangkapan
-    - Menilai kondisi kesehatan terumbu karang
-    - Berperan dalam rantai makanan
-    correctAnswerIndex: 1
-  - question: Apa peran utama ikan dalam kelompok "Kelompok Ikan Lain (Mayor Famili)"?
+    - Menjadi target penangkapan dan konsumsi
+    - Menjadi ikan hias air laut
+    - Menjadi indikator kesehatan terumbu karang
+    correctAnswerIndex: 2
+  - question: Apa yang dimaksud dengan ikan yang bersifat menetap?
     answers:
-    - Menjadi target penangkapan
-    - Berperan dalam rantai makanan
-    - Menilai kondisi kesehatan terumbu karang
-    correctAnswerIndex: 1
+    - Ikan yang berpindah-pindah
+    - Ikan yang hanya sebagian siklus hidupnya di perairan terumbu karang
+    - Ikan yang seluruh siklus hidupnya di perairan terumbu karang
+    correctAnswerIndex: 2
   defaultTime: 50
   questionText: {fileID: 1413369623}
   answerButtons:

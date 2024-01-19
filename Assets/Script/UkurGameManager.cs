@@ -9,6 +9,7 @@ public class UkurGameManager : MonoBehaviour
 
     public GameObject[] objectsToActivate; // Objek yang akan diaktifkan
     public GameObject panelToShow; // Objek panel yang akan ditampilkan
+    public GameObject check; // Objek panel yang akan ditampilkan
     public float delayToShowPanel = 1.5f; // Delay sebelum menampilkan panel
 
     private int activatedObjectCount = 0;
@@ -26,7 +27,7 @@ public class UkurGameManager : MonoBehaviour
 
     void UpdateActivatedCountUI()
     {
-        activatedCountText.text = "Teraktifkan: " + activatedObjectCount + "/" + objectsToActivate.Length;
+        activatedCountText.text = "Telah diukur: " + activatedObjectCount + "/" + objectsToActivate.Length;
     }
 
     public void TambahSkor(int nilai)
@@ -70,5 +71,7 @@ public class UkurGameManager : MonoBehaviour
         {
             panelToShow.SetActive(true);
         }
+
+        check.SetActive(true);
     }
 }

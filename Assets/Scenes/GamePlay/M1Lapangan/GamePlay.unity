@@ -390,6 +390,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floatSpeed: 1
   floatDistance: 0.5
+  audioSampah: {fileID: 213324065}
 --- !u!60 &137594618
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -658,7 +659,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 21300000, guid: 007f49a6e7a06db41bb60fe41cc0ce92, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 74e429133973fbe43bb2ea0f617d9e03, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -677,8 +678,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 147684228}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.7, y: 3.7, z: 0}
-  m_LocalScale: {x: 0.6818, y: 0.6818, z: 0.6818}
+  m_LocalPosition: {x: 8.35, y: 3.87, z: 0}
+  m_LocalScale: {x: 0.47335923, y: 0.47335923, z: 0.47335923}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -854,7 +855,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 4314824837642784927, guid: f084cbefd20f09e429f79b4ddb18dfb0, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 08f260759ce82df4a9ec98a733af46b8, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 1a957754f3df7744b86b793b2269f449, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -1342,6 +1343,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floatSpeed: 1
   floatDistance: 0.5
+  audioSampah: {fileID: 213324065}
 --- !u!60 &261166763
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1600,6 +1602,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floatSpeed: 1
   floatDistance: 0.5
+  audioSampah: {fileID: 213324065}
 --- !u!60 &264244500
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1770,7 +1773,6 @@ MonoBehaviour:
   seaweedCheckObject: {fileID: 1103089786}
   trashCheckObject: {fileID: 1715398210}
   ambilSeawed: {fileID: 152719212}
-  ambilSampah: {fileID: 213324065}
 --- !u!4 &275208292
 Transform:
   m_ObjectHideFlags: 0
@@ -2433,6 +2435,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floatSpeed: 1
   floatDistance: 0.5
+  audioSampah: {fileID: 213324065}
 --- !u!60 &420954595
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -2646,6 +2649,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floatSpeed: 1
   floatDistance: 0.5
+  audioSampah: {fileID: 213324065}
 --- !u!60 &574018009
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -3981,6 +3985,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floatSpeed: 1
   floatDistance: 0.5
+  audioSampah: {fileID: 213324065}
 --- !u!60 &785855747
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -4687,6 +4692,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floatSpeed: 1
   floatDistance: 0.5
+  audioSampah: {fileID: 213324065}
 --- !u!60 &1004905608
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -6453,6 +6459,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floatSpeed: 1
   floatDistance: 0.5
+  audioSampah: {fileID: 213324065}
 --- !u!212 &1455879534
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7467,6 +7474,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floatSpeed: 1
   floatDistance: 0.5
+  audioSampah: {fileID: 213324065}
 --- !u!60 &1634208707
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -7639,6 +7647,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floatSpeed: 1
   floatDistance: 0.5
+  audioSampah: {fileID: 213324065}
 --- !u!60 &1641347631
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -8510,6 +8519,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floatSpeed: 1
   floatDistance: 0.5
+  audioSampah: {fileID: 213324065}
 --- !u!60 &1719112735
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -9097,6 +9107,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floatSpeed: 1
   floatDistance: 0.5
+  audioSampah: {fileID: 213324065}
 --- !u!60 &1967443170
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -9777,6 +9788,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floatSpeed: 1
   floatDistance: 0.5
+  audioSampah: {fileID: 213324065}
 --- !u!60 &2099657810
 PolygonCollider2D:
   m_ObjectHideFlags: 0

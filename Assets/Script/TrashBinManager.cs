@@ -22,6 +22,10 @@ public class TrashBinManager : MonoBehaviour
     public TMP_Text WrongInput;    // Text for displaying the count of wrong inputs
     public TMP_Text CongratulationText; // Text for displaying congratulatory message
 
+    public AudioSource audioBenar;
+    public AudioSource audioSalah;
+    public AudioSource audioSpawn;
+
     private int score = 0;
     private int remainingTrashCount; // Jumlah sisa sampah
     private int correctInputCount = 0; // Counter for correct inputs
@@ -106,6 +110,7 @@ public class TrashBinManager : MonoBehaviour
         if (isTrashSpawnAllowed)
         {
             SpawnTrash();
+            audioSpawn.Play();
 
             if (isFirstTrashButtonPress)
             {
@@ -160,6 +165,7 @@ public class TrashBinManager : MonoBehaviour
             score += 10;
             correctInputCount++;
             UpdateScoreText();
+            audioBenar.Play();
             EnqueueMessage(TypeNewMessage("Bagus, Pilihanmu Benar. Ayo Ambil Sampah Lagi Sampai Habis", true));
         }
         else
@@ -167,6 +173,7 @@ public class TrashBinManager : MonoBehaviour
             score = Mathf.Max(0, score - 5); // Pastikan skor tidak negatif
             wrongInputCount++;
             UpdateScoreText();
+            audioSalah.Play();
             EnqueueMessage(TypeNewMessage("Ups, Kamu Salah. Ayo Ambil Sampah Lagi Sampai Habis", false));
         }
 

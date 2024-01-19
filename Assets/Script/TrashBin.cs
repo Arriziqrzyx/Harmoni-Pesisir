@@ -4,6 +4,7 @@ public class TrashBin : MonoBehaviour
 {
     public Sprite openedBinSprite;
     public Sprite closedBinSprite;
+    public AudioSource audioMangap;
 
     private SpriteRenderer spriteRenderer;
     private float originalYPosition;
@@ -21,6 +22,7 @@ public class TrashBin : MonoBehaviour
         {
             spriteRenderer.sprite = openedBinSprite;
             ChangeBinSpritePosition(-1.13f);
+            audioMangap.Play();
         }
     }
 

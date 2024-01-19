@@ -3636,37 +3636,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   questions:
-  - question: Apa peran terumbu karang sebagai "rumah besar" di laut?
+  - question: ' Apa yang membuat terumbu karang seperti rumah besar di dalam laut?'
     answers:
-    - ' Tempat pembuangan limbah'
-    - Tempat tinggal untuk ikan dan tumbuhan laut
-    - Sumber energi listrik
+    - ' Endapan-endapan lunak'
+    - Kecerahan air, suhu air, garam dalam air, dan gerakan air
+    - Pohon-pohon besar di sekitarnya
     correctAnswerIndex: 1
-  - question: Apa yang dapat menyebabkan rusaknya terumbu karang?
+  - question: Mengapa penting menjaga terumbu karang agar tetap bersih dan nyaman?
     answers:
-    - Pertumbuhan alami terlalu cepat
-    - Penggunaan bahan peledak dalam penangkapan ikan
-    - Kenaikan salinitas air laut
-    correctAnswerIndex: 1
-  - question: Apa salah satu cara konservasi terumbu karang yang disebut dalam teks?
-    answers:
-    - Penggunaan terumbu karang yang sudah mati sebagai bahan konstruksi
-    - Penggalian tanah di sekitar terumbu karang
-    - ' Pengambilan karang untuk dijadikan cindera mata'
+    - Agar laut tetap indah dan penuh kehidupan
+    - Agar terumbu karang bisa bergerak
+    - Agar terumbu karang bisa tumbuh lebih cepat
     correctAnswerIndex: 0
-  - question: Apa tujuan utama dari tahap pengumpulan fragmen karang dalam proses
-      transplantasi terumbu karang?
+  - question: Apa dampak jika terumbu karang diambil secara berlebihan?
     answers:
-    - Mengurangi pertumbuhan karang
-    - Meminimalkan kerusakan karang dan memastikan pertumbuhan optimal
-    - Menciptakan kerangka laba-laba
+    - Pertumbuhan lebih cepat
+    - Kerusakan tanah pantai
+    - Peningkatan keanekaragaman genetik
     correctAnswerIndex: 1
-  - question: Mengapa penting untuk menyusun kaki-kaki laba-laba agar saling bersilangan
-      dan diikat erat dalam sistem transplantasi terumbu karang?
+  - question: Apa yang dapat merusak terumbu karang?
     answers:
-    - Untuk membuat struktur laba-laba lebih mudah terangkat oleh arus laut
-    - ' Agar laba-laba dapat bergerak bebas di dasar laut'
-    - ' Untuk menjaga kestabilan dan ketahanan terhadap tekanan lingkungan sekitarnya'
+    - Penggalian tanah, pembangunan, dan kegiatan manusia
+    - Pemanasan global dan es mencair
+    - Aktivitas bulan dan matahari
+    correctAnswerIndex: 0
+  - question: Mengapa penting agar semua bagian laba-laba terhubung dengan baik dalam
+      penyusunan kerangka laba-laba?
+    answers:
+    - Agar laba-laba bisa bergerak lebih cepat
+    - ' Agar laba-laba tidak bisa bergerak'
+    - Agar laba-laba tidak terangkat oleh arus atau gelombang laut
     correctAnswerIndex: 2
   defaultTime: 50
   questionText: {fileID: 1413369623}

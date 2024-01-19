@@ -10,7 +10,10 @@ public class GerakIkan : MonoBehaviour
 
     private bool sedangNaikTurun = false;
     private bool isGamePaused = false;
+    private bool isTweenPaused = false;
     public bool IsGamePaused { get { return isGamePaused; } }
+
+    private Tween tween;
 
     void Start()
     {
@@ -18,7 +21,7 @@ public class GerakIkan : MonoBehaviour
         kecepatanIkan = (transform.position.x < 0) ? Mathf.Abs(kecepatanIkan) : -Mathf.Abs(kecepatanIkan);
 
         // Tentukan flip sprite berdasarkan posisi spawn
-        GetComponent<SpriteRenderer>().flipX = (kecepatanIkan < 0);
+        GetComponent<SpriteRenderer>().flipX = (kecepatanIkan > 0);
 
         // Mulai pergerakan naik turun
         StartNaikTurun();
@@ -65,7 +68,7 @@ public class GerakIkan : MonoBehaviour
             float targetY = transform.position.y + jarakNaikTurun;
 
             // DOTween untuk pergerakan naik turun
-            transform.DOMoveY(targetY, 5f).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.InOutBack);
+            tween = transform.DOMoveY(targetY, 5f).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.InOutBack);
         }
     }
 
@@ -73,11 +76,25 @@ public class GerakIkan : MonoBehaviour
     {
         // Memulai kembali pergerakan ikan setelah menutup popup
         isGamePaused = false;
+
+        // Melanjutkan animasi DOTween jika sebelumnya di-pause
+        if (isTweenPaused)
+        {
+            tween.Play();
+            isTweenPaused = false;
+        }
     }
 
     void PauseGame()
     {
         // Menghentikan pergerakan ikan dan mem-pause permainan
         isGamePaused = true;
+
+        // Memberhentikan animasi DOTween
+        if (tween != null && tween.IsActive())
+        {
+            tween.Pause();
+            isTweenPaused = true;
+        }
     }
 }
