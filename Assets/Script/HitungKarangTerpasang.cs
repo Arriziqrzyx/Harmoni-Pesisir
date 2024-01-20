@@ -7,6 +7,7 @@ public class HitungKarangTerpasang : MonoBehaviour
     public TMP_Text textKarangTerpasang;
     public GameObject CheckSukses; // Tambahkan variabel panelWin untuk merujuk ke panel kemenangan
     public GameObject panelWin; // Tambahkan variabel panelWin untuk merujuk ke panel kemenangan
+    public TMP_Text resultMessageText;
     private float delayBeforeWin = 1f; // Tambahkan delay sebelum menampilkan panel kemenangan
 
     private int jumlahChildrenAwal;
@@ -49,6 +50,11 @@ public class HitungKarangTerpasang : MonoBehaviour
         // Aktifkan panel win
         CheckSukses.SetActive(true);
         panelWin.SetActive(true);
+
+        if (resultMessageText != null)
+        {
+            resultMessageText.text = "Kereeeen! Kamu telah memasang semua karang:";
+        }
     }
 
     public void ChildDestroyed()

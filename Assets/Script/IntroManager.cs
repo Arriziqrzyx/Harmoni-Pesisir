@@ -14,8 +14,9 @@ public class IntroManager : MonoBehaviour
 
     private void Start()
     {
-        // PlayerPrefs.DeleteKey(playerNameKey);
-        // Mengecek apakah nama pemain sudah diisi sebelumnya
+        Application.targetFrameRate = 60;
+        // PlayerPrefs.DeleteAll();
+        // PlayerPrefs.Save();
         if (PlayerPrefs.HasKey(playerNameKey))
         {
             // Jika sudah, langsung pindah ke scene "Menu"

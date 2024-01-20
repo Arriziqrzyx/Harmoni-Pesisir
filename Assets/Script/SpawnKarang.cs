@@ -6,6 +6,7 @@ public class SpawnKarang : MonoBehaviour
     public GameObject potonganKarangPrefab; // Assign prefab potongan karang melalui Inspector
     public Transform keranjangTransform; // Assign objek keranjang melalui Inspector
     public GameObject aktivasiObjek; // Assign objek yang akan diaktifkan setelah spawn 6 kali melalui Inspector
+    public AudioSource SoundMetikKarang;
 
     private bool isMousePressed = false;
     private bool isMouseOver = false;
@@ -65,6 +66,7 @@ public class SpawnKarang : MonoBehaviour
     {
         if (spawnCount < 6) // Jika belum mencapai spawn maksimal (6)
         {
+            SoundMetikKarang.Play();
             GameObject spawnedKarang = Instantiate(potonganKarangPrefab, transform.position, Quaternion.identity);
             spawnedKarang.GetComponent<PotonganKarang>().SetTargetKeranjang(keranjangTransform);
             spawnCount++;

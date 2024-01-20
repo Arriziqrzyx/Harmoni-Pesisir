@@ -10,4 +10,10 @@ public class SceneLoader : MonoBehaviour
         sceneToLoad = sceneName;
         SceneManager.LoadScene(sceneToLoad);
     }
+    
+    public void Keluar()
+    {
+        Application.Quit();
+        Debug.Log("Keluar Game");
+    }
 }

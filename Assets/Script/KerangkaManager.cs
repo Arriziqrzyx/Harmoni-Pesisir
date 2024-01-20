@@ -50,6 +50,7 @@ public class KerangkaManager : MonoBehaviour
     public GameObject pesanBaru2;
     public GameObject papanLama;
     public GameObject papanBaru;
+    public AudioSource kepasangAudio;
 
     private int dropAreaCountGaris = 0;
     private int totalDropAreaCountGaris;
@@ -57,11 +58,14 @@ public class KerangkaManager : MonoBehaviour
     private int dropAreaCountTali = 0;
     private int totalDropAreaCountTali;
 
-    private float timerDuration = 45f;
+    private float timerDuration = 60f;
     private float timer;
     private int currentScore;
 
     private bool isGameOver = false;
+
+    private int highScoreL2 = 0;
+    private string highScoreL2Key = "HighScoreL2";
 
     void Start()
     {
@@ -93,7 +97,7 @@ public class KerangkaManager : MonoBehaviour
             {
                 if (timerText != null)
                 {
-                    timerText.text = "Sisa Waktu: " + Mathf.CeilToInt(timer);
+                    timerText.text = "Sisa Waktu: " + Mathf.CeilToInt(timer); // Perbarui waktu yang ditampilkan di timerText
                 }
             }
         }
@@ -291,19 +295,33 @@ public class KerangkaManager : MonoBehaviour
 
     void CalculateScore()
     {
-        float timeRemaining = timerDuration - timer;
+        float timeRemaining = timer;
 
-        if (timeRemaining <= 20f)
+        Debug.Log("Time Remaining: " + timeRemaining);
+
+        if (timeRemaining > 25f)
         {
             currentScore = 100;
         }
-        else if (timeRemaining <= 25f)
+        else if (timeRemaining > 20f && timeRemaining <= 25f)
         {
             currentScore = 80;
         }
-        else if (timeRemaining <= 30f)
+        else if (timeRemaining > 15f && timeRemaining <= 20f)
+        {
+            currentScore = 75;
+        }
+        else if (timeRemaining > 10f && timeRemaining <= 15f)
         {
             currentScore = 70;
+        }
+        else if (timeRemaining > 5f && timeRemaining <= 10f)
+        {
+            currentScore = 65;
+        }
+        else if (timeRemaining > 0f && timeRemaining <= 5f)
+        {
+            currentScore = 60;
         }
         else
         {
@@ -336,14 +354,28 @@ public class KerangkaManager : MonoBehaviour
             winPanel.SetActive(true);
         }
 
-       if (sisaWaktu != null)
+        if (sisaWaktu != null)
         {
             sisaWaktu.text = Mathf.CeilToInt(timer) + " Detik";
         }
 
         if (scoreResult != null)
         {
-             scoreResult.text = currentScore.ToString();
+            scoreResult.text = currentScore.ToString();
+        }
+
+        // Panggil untuk menyimpan skor pada level 2 ke PlayerPrefs
+        UpdateHighScoreL2();
+    }
+
+    private void UpdateHighScoreL2()
+    {
+        // Periksa skor tertinggi sebelum menyimpan ke PlayerPrefs
+        int previousHighScore = PlayerPrefs.GetInt(highScoreL2Key, 0);
+        if (currentScore > previousHighScore)
+        {
+            highScoreL2 = currentScore;
+            PlayerPrefs.SetInt(highScoreL2Key, highScoreL2);
         }
     }
 }

@@ -55,6 +55,7 @@ public class Garis : MonoBehaviour
 
                     // Menambah jumlah drop area yang dihancurkan
                     kerangkaManager.IncrementDropAreaCountGaris();
+                    kerangkaManager.kepasangAudio.Play();
                     break;
                 }
             }

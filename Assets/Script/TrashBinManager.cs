@@ -8,7 +8,7 @@ public class TrashBinManager : MonoBehaviour
 {
     public GameObject organicBin;
     public GameObject inorganicBin;
-    public GameObject popUpObject; // Game object pop-up
+    public GameObject popUpObject;
 
     public GameObject[] trashPrefabs;
     public Transform spawnPoint1;
@@ -17,38 +17,39 @@ public class TrashBinManager : MonoBehaviour
     public TextMeshProUGUI remainingTrashText;
     public TextMeshProUGUI scoreText;
     public DialogPlayPilSam dialogPlayPilSam;
-    public TMP_Text ScoreFinal;    // Text for displaying the final score
-    public TMP_Text CorrectInput;  // Text for displaying the count of correct inputs
-    public TMP_Text WrongInput;    // Text for displaying the count of wrong inputs
-    public TMP_Text CongratulationText; // Text for displaying congratulatory message
+    public TMP_Text ScoreFinal;
+    public TMP_Text CorrectInput;
+    public TMP_Text WrongInput;
+    public TMP_Text CongratulationText;
 
     public AudioSource audioBenar;
     public AudioSource audioSalah;
     public AudioSource audioSpawn;
 
     private int score = 0;
-    private int remainingTrashCount; // Jumlah sisa sampah
-    private int correctInputCount = 0; // Counter for correct inputs
-    private int wrongInputCount = 0;   // Counter for wrong inputs
+    private int remainingTrashCount;
+    private int correctInputCount = 0;
+    private int wrongInputCount = 0;
 
     private bool isTrashSpawnAllowed = true;
     private bool isTrashDestroyed = true;
     private List<GameObject> spawnedTrash = new List<GameObject>();
     private Coroutine currentMessageCoroutine;
     private bool isFirstTrashButtonPress = true;
+    private int highScore;
 
-    // Key for player name in PlayerPrefs
     private string playerNameKey = "PlayerName";
+    private string highScoreL1Key = "HighScoreL1";
 
     private void Start()
     {
-        // Set jumlah awal sisa sampah
         remainingTrashCount = trashPrefabs.Length;
-        
-        // Update UI
         UpdateRemainingTrashText();
         UpdateScoreText();
         EnqueueMessage(TypeNewMessage("Tekan tempat sampah warna hitam untuk mengambil sampah. Terus ambil dan pisahkan sesuai jenisnya hingga sampah habis", true));
+        
+        // Panggil untuk mendapatkan skor tertinggi dari PlayerPrefs saat permainan dimulai
+        highScore = PlayerPrefs.GetInt(highScoreL1Key, 0);
     }
 
     private void UpdateRemainingTrashText()
@@ -57,7 +58,6 @@ public class TrashBinManager : MonoBehaviour
         {
             remainingTrashText.text = remainingTrashCount.ToString();
 
-            // Jika sampah habis, tunggu 1 detik kemudian aktifkan pop-up
             if (remainingTrashCount == 0)
             {
                 StartCoroutine(ActivatePopUp());
@@ -69,7 +69,7 @@ public class TrashBinManager : MonoBehaviour
     {
         if (scoreText != null)
         {
-            scoreText.text = Mathf.Max(0, score).ToString(); // Pastikan skor tidak negatif
+            scoreText.text = Mathf.Max(0, score).ToString();
         }
     }
 
@@ -77,7 +77,7 @@ public class TrashBinManager : MonoBehaviour
     {
         if (ScoreFinal != null)
         {
-            ScoreFinal.text = score.ToString() ;
+            ScoreFinal.text = score.ToString();
         }
 
         if (CorrectInput != null)
@@ -140,7 +140,6 @@ public class TrashBinManager : MonoBehaviour
                 SetupTrashType(trash);
             });
 
-            // Tidak mengurangi sisa sampah di sini
             isTrashDestroyed = false;
         }
     }
@@ -170,22 +169,23 @@ public class TrashBinManager : MonoBehaviour
         }
         else
         {
-            score = Mathf.Max(0, score - 5); // Pastikan skor tidak negatif
+            score = Mathf.Max(0, score - 5);
             wrongInputCount++;
             UpdateScoreText();
             audioSalah.Play();
             EnqueueMessage(TypeNewMessage("Ups, Kamu Salah. Ayo Ambil Sampah Lagi Sampai Habis", false));
         }
 
-        remainingTrashCount--; // Mengurangi sisa sampah setelah sampah dimasukkan ke tong
+        remainingTrashCount--;
         UpdateRemainingTrashText();
 
         isTrashSpawnAllowed = true;
 
-        // Cek apakah semua sampah sudah dimasukkan, update teks final score jika ya
         if (remainingTrashCount == 0)
         {
             UpdateFinalScoreText();
+            // Panggil untuk memperbarui high score saat permainan berakhir
+            UpdateHighScore();
         }
     }
 
@@ -213,17 +213,19 @@ public class TrashBinManager : MonoBehaviour
 
         if (popUpObject != null)
         {
-            // Aktifkan pop-up
             popUpObject.SetActive(true);
-
-            // Update teks final score dan ucapan selamat pada pop-up
             UpdateFinalScoreText();
             UpdateCongratulationText();
+            
+            // Panggil untuk memperbarui high score saat pop-up aktif
+            UpdateHighScore();
         }
     }
 
     private void GameOver()
     {
+        // Panggil untuk memperbarui high score saat game over
+        UpdateHighScore();
         Debug.Log("Game Over");
     }
 
@@ -235,5 +237,15 @@ public class TrashBinManager : MonoBehaviour
     private string GetPlayerName()
     {
         return PlayerPrefs.GetString(playerNameKey, "Player");
+    }
+
+    private void UpdateHighScore()
+    {
+        // Pemeriksaan skor tertinggi sebelum menyimpan ke PlayerPrefs
+        if (score > highScore)
+        {
+            highScore = score;
+            PlayerPrefs.SetInt(highScoreL1Key, highScore);
+        }
     }
 }

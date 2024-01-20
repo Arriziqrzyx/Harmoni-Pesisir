@@ -12,6 +12,7 @@ public class GerakIkan : MonoBehaviour
     private bool isGamePaused = false;
     private bool isTweenPaused = false;
     public bool IsGamePaused { get { return isGamePaused; } }
+    public AudioSource soundIkan;
 
     private Tween tween;
 
@@ -48,6 +49,7 @@ public class GerakIkan : MonoBehaviour
         {
             // Menampilkan popup jika permainan tidak sedang di-pause
             popup.SetActive(true);
+            soundIkan.Play();
 
             // Menghentikan pergerakan ikan dan mem-pause permainan
             PauseGame();

@@ -22,6 +22,8 @@ public class GerakanNaikTurun : MonoBehaviour
     private ObjectState currentState = ObjectState.Moving;
     private float waktuMulai;
     public UkurGameManager ukurGameManager; // Referensi ke GameManager
+    public AudioSource benarAudio;
+    public AudioSource wrongAudio;
 
     void Start()
     {
@@ -58,6 +60,7 @@ public class GerakanNaikTurun : MonoBehaviour
         {
             // Objek berada di dalam win area, tampilkan konsol sukses
             Debug.Log("Sukses!");
+            benarAudio.Play();
             // Aktifkan objek yang diaktifkan saat menang
             if (winObject != null)
             {
@@ -69,11 +72,13 @@ public class GerakanNaikTurun : MonoBehaviour
         {
             // Objek berada di luar win area, tampilkan konsol lose
             Debug.Log("Lose!");
+            wrongAudio.Play();
             // Aktifkan objek yang diaktifkan saat kalah
             if (loseObject != null)
             {
                 loseObject.SetActive(true);
                 ukurGameManager.TambahSkor(-5); // Tambahkan skor 25 jika menang
+                
             }
         }
 

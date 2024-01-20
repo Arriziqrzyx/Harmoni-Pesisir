@@ -37,6 +37,7 @@ public class Tali : MonoBehaviour
             // Periksa apakah objek tali di-drop di atas objek drop area tali
             if (collider.CompareTag("DropAreaTali"))
             {
+                kerangkaManager.kepasangAudio.Play();
                 // Objek di-drop pada area tali yang tepat, hancurkan objek tali
                 Destroy(gameObject);
 

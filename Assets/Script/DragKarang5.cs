@@ -42,6 +42,7 @@ public class DragKarang5 : MonoBehaviour
 
             foreach (Collider2D collider in colliders)
             {
+                kerangkaManager.kepasangAudio.Play();
                 // Periksa apakah objek karang di-drop di atas objek drop area karang
                 if (collider.CompareTag("DropAreakarang5"))
                 {

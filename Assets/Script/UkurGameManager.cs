@@ -4,18 +4,26 @@ using TMPro;
 public class UkurGameManager : MonoBehaviour
 {
     private int skor = 0;
+    private int activatedObjectCount = 0;
+
     [SerializeField] TMP_Text skorText;
     [SerializeField] TMP_Text activatedCountText;
 
-    public GameObject[] objectsToActivate; // Objek yang akan diaktifkan
-    public GameObject panelToShow; // Objek panel yang akan ditampilkan
-    public GameObject check; // Objek panel yang akan ditampilkan
-    public float delayToShowPanel = 1.5f; // Delay sebelum menampilkan panel
+    public GameObject[] objectsToActivate;
+    public GameObject panelToShow;
+    public GameObject check;
+    public float delayToShowPanel = 1.5f;
+    public TMP_Text resultMessageText;
 
-    private int activatedObjectCount = 0;
+    // High score variables
+    private int highScoreL3 = 0;
+    private string highScoreL3Key = "HighScoreL3";
 
     void Start()
     {
+        // Mendapatkan high score dari PlayerPrefs saat permainan dimulai
+        highScoreL3 = PlayerPrefs.GetInt(highScoreL3Key, 0);
+
         UpdateSkorUI();
         UpdateActivatedCountUI();
     }
@@ -73,5 +81,18 @@ public class UkurGameManager : MonoBehaviour
         }
 
         check.SetActive(true);
+
+        // Membandingkan skor dengan high score dan menyimpan jika skor baru lebih tinggi
+        if (skor > highScoreL3)
+        {
+            highScoreL3 = skor;
+            PlayerPrefs.SetInt(highScoreL3Key, highScoreL3);
+        }
+
+        // Menampilkan pesan setelah panel ditampilkan
+        if (resultMessageText != null)
+        {
+            resultMessageText.text = "Kereeeen! Kamu telah mengukur semua karang. Skor kamu: " + skor;
+        }
     }
 }

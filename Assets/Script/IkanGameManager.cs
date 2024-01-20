@@ -9,7 +9,7 @@ public class IkanGameManager : MonoBehaviour
     void Start()
     {
         // Panggil fungsi SpawnIkan setiap beberapa detik (misalnya, setiap 8 detik)
-        InvokeRepeating("SpawnIkan", 0f, 8f);
+        InvokeRepeating("SpawnIkan", 0f, 3f);
     }
 
     void SpawnIkan()

@@ -45,6 +45,7 @@ public class DragKarang6 : MonoBehaviour
                 // Periksa apakah objek karang di-drop di atas objek drop area karang
                 if (collider.CompareTag("DropAreakarang6"))
                 {
+                    kerangkaManager.kepasangAudio.Play();
                     // Mengaktifkan semua children dari DropAreaKarang
                     Transform dropAreaTransform = collider.transform;
                     for (int i = 0; i < dropAreaTransform.childCount; i++)

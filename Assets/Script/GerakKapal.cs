@@ -4,6 +4,7 @@ public class GerakKapal : MonoBehaviour
 {
     public float kecepatanKapal = 5f;
     public float batasHancur = 13f;
+    public AudioSource soundTenggelam;
 
     private bool sudahDiklik = false;
     private Rigidbody2D rb;
@@ -64,6 +65,8 @@ public class GerakKapal : MonoBehaviour
 
             // Menonaktifkan freeze position Y pada Rigidbody
             rb.constraints = RigidbodyConstraints2D.None;
+
+            soundTenggelam.Play();
 
             // Tentukan nilai skor berdasarkan jenis kapal
             int nilaiSkor = kapalJahat ? 10 : -10;

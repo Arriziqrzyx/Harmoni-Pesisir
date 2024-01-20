@@ -39,8 +39,14 @@ public class QuizManager : MonoBehaviour
     private int currentTime; // Tambahkan variabel currentTime sebagai variabel instans
     private string playerNameKey = "PlayerName";
 
+    public int highScoreU1 = 0;
+    public string highScoreU1Key = "HighScoreU1";
+
     private void Start()
     {
+        // Ambil high score dari PlayerPrefs
+        highScoreU1 = PlayerPrefs.GetInt(highScoreU1Key, 0);
+
         currentQuestionIndex = 0;
         correctAnswersCount = 0;
         totalQuestions = questions.Length;
@@ -80,7 +86,6 @@ public class QuizManager : MonoBehaviour
         ShowResult();
     }
 
-
     private void ShowResult()
     {
         string playerName = PlayerPrefs.GetString(playerNameKey, "Kamu");
@@ -92,6 +97,13 @@ public class QuizManager : MonoBehaviour
             correctAnswersText.text = correctAnswersCount + " dari " + totalQuestions;
             remainingTimeText.text = currentTime + " detik";
             totalScoreText.text = (correctAnswersCount * 2 * currentTime).ToString();
+
+            // Perbarui high score jika skor baru lebih tinggi
+            if ((correctAnswersCount * 2 * currentTime) > highScoreU1)
+            {
+                highScoreU1 = correctAnswersCount * 2 * currentTime;
+                PlayerPrefs.SetInt(highScoreU1Key, highScoreU1);
+            }
         }
         else
         {
@@ -111,7 +123,6 @@ public class QuizManager : MonoBehaviour
             totalScoreTextLose.text = (correctAnswersCount * 2 * currentTime).ToString();
         }
     }
-
 
     IEnumerator LoadGame(string Name)
     {

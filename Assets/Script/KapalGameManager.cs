@@ -10,13 +10,20 @@ public class KapalGameManager : MonoBehaviour
     public TMP_Text skorText;
     public TMP_Text timerText;
     public GameObject panelGameOver; // Panel yang akan diaktifkan saat timer habis
+    public TMP_Text resultMessageText;
 
     private IkanGameManager ikanGameManager;
     private int skor = 0;
     private float timer = 60f; // 2 menit 30 detik
 
+    private int highScoreL4 = 0;
+    private string highScoreL4Key = "HighScoreL4";
+
     void Start()
     {
+        // Ambil high score dari PlayerPrefs
+        highScoreL4 = PlayerPrefs.GetInt(highScoreL4Key, 0);
+
         ikanGameManager = FindObjectOfType<IkanGameManager>(); // Menggunakan FindObjectOfType karena GameManager adalah satu-satunya objek di scene
         if (ikanGameManager == null)
         {
@@ -24,7 +31,7 @@ public class KapalGameManager : MonoBehaviour
         }
 
         // Panggil fungsi SpawnKapal setiap beberapa detik (misalnya, setiap 2 detik)
-        InvokeRepeating("SpawnKapal", 0f, 8f);
+        InvokeRepeating("SpawnKapal", 0f, 3.5f);
 
         // Mulai mengurangi timer setiap detik
         InvokeRepeating("UpdateTimer", 0f, 1f);
@@ -86,6 +93,14 @@ public class KapalGameManager : MonoBehaviour
         skor = Mathf.Max(skor, 0);
 
         skorText.text = "Skor: " + skor.ToString();
+
+        // Periksa apakah skor yang baru dicapai lebih tinggi dari high score yang tersimpan
+        if (skor > highScoreL4)
+        {
+            // Jika ya, perbarui high score dan simpan ke PlayerPrefs
+            highScoreL4 = skor;
+            PlayerPrefs.SetInt(highScoreL4Key, highScoreL4);
+        }
     }
 
     void AktifkanPanelGameOver()
@@ -101,7 +116,13 @@ public class KapalGameManager : MonoBehaviour
             kapal.enabled = false;
         }
 
+        if (resultMessageText != null)
+        {
+            resultMessageText.text = "Bagusss, Kamu sangat tegas dan berani menjaga wilayah konservasi ini dari kapal asing. Skor kamu: " + skor;
+        }
         // Aktifkan panel
         panelGameOver.SetActive(true);
+        // Menampilkan pesan setelah panel ditampilkan
+        
     }
 }
